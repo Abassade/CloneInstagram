@@ -1,5 +1,7 @@
 package com.example.user.cloneinstagram;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.nfc.Tag;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
@@ -22,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
         BottomNavigationViewHelper.removeShiftMode(bottomNavigationView);
+        bottomNavigationView.setItemTextColor(ColorStateList.valueOf(Color.TRANSPARENT));
 
         pager = findViewById(R.id.pager);
         tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager, true);
         setUpViewPager(pager);
         adapter = new SectionPageAdapter(getSupportFragmentManager());
+        
 
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_attachment_black_24dp);
