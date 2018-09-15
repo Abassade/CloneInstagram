@@ -8,6 +8,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager, true);
         setUpViewPager(pager);
         adapter = new SectionPageAdapter(getSupportFragmentManager());
-        
 
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_attachment_black_24dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_android_black_24dp);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_photo_camera_black_24dp);
+        tabLayout.getTabAt(1).setText("Instagram");
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_perm_contact_calendar_black_24dp);
 
     }
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         sectionPageAdapter.addFragment(new Fragment_tab_three());
         pager.setAdapter(sectionPageAdapter);
     }
+
+
 
 
 }
