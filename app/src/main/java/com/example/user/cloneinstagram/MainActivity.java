@@ -31,9 +31,11 @@ public class MainActivity extends AppCompatActivity {
         pager = findViewById(R.id.pager);
         tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager, true);
+        tabLayout.setSelectedTabIndicatorColor(Color.TRANSPARENT);
+        pager.setCurrentItem(1);
         setUpViewPager(pager);
-        adapter = new SectionPageAdapter(getSupportFragmentManager());
 
+        adapter = new SectionPageAdapter(getSupportFragmentManager());
 
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_photo_camera_black_24dp);
@@ -50,8 +52,5 @@ public class MainActivity extends AppCompatActivity {
         sectionPageAdapter.addFragment(new Fragment_tab_three());
         pager.setAdapter(sectionPageAdapter);
     }
-
-
-
 
 }
